@@ -12,7 +12,7 @@ print "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
 print "<!DOCTYPE html>"
 print "<html>"
 print "<body>"
-print "<a href='/car'>/car</a><hr>"
+print "<a href='/tanque'>/tanque</a><hr>"
 print "<pre>"
 
 pids = [pid for pid in os.listdir('/proc') if pid.isdigit()]
