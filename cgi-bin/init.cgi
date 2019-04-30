@@ -20,11 +20,11 @@ for pid in pids:
     try:
         pname = open(os.path.join('/proc', pid, 'cmdline'), 'rb').read()
         if pname.startswith("mjpg_streamer"):
-            print "mjpg_streamer is already running, kill it"
+            print "mjpg_streamer já esta rodando, matar processo"
             os.kill(int(pid), signal.SIGKILL)
             time.sleep(3)
         if pname.startswith("node") and pname.find("fpvtanque.js")>0:
-            print "node server is already running, kill it"
+            print "node server já esta rodando, matar processo"
             os.kill(int(pid), signal.SIGKILL)
             time.sleep(3)
     except IOError:
@@ -42,11 +42,11 @@ if "f" in form:
 print "starting mjpeg streamer (%s, %d)..." % (resolution, fps), 
 mjpg_cmd = r'mjpg_streamer -i "input_uvc.so -d /dev/video0 -r %s -f %d" -o "output_http.so -p 8080 -w /www/webcam" &'
 os.system(mjpg_cmd % (resolution, fps))
-print "done"
+print "Pronto"
 
 print "starting node server ...",
 os.system("node /root/fpvtanque.js > /root/fpv.log &")
-print "done"
+print "Pronto"
 
 print "</pre></body>"
 print "</html>"
