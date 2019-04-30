@@ -1,0 +1,451 @@
+    
+<!DOCTYPE html>
+<html >
+<head >
+<meta content="width=device-width, initial-scale=1" name="viewport" />
+<style type="text/css">
+* {
+     user-select: none;
+    -khtml-user-select: none;
+    -o-user-select: none;
+    -moz-user-select: -moz-none;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+}
+body{
+  padding: 0;
+  margin:0;
+}
+#container{
+  height: 700px;
+  width: 100%;
+  border: 0px solid red;
+}
+#centralizar{
+  padding: 0px 0px;
+
+}
+#fpv {  
+  width: 50%;
+   padding: 0px 0;
+  border: 0px solid black;
+}
+#metade{
+ width: 50%
+}
+
+#msg_panel {
+  position: absolute;
+  top:100%;
+  margin:-25px 5px 0 0;
+}
+
+#state_panel {
+  position: absolute;
+  top:100%;
+  margin:-50px 5px 0 0;
+}
+
+#imgArrow {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin: -64px 0 0 -12px;
+  transform-origin: 50% 80%;
+  visibility: hidden;
+}
+.slidecontainer {
+  padding: 40 1;
+  height:  80%; /* Height of the outside container */
+  position: absolute;
+  right: 5%;
+  top:5%;
+}
+
+/* The slider itself */
+.slider {  
+  appearance: none;
+  writing-mode: bt-lr; /* IE */
+ -webkit-appearance: slider-vertical; /* WebKit */
+  width: 20px; /* Full-width */
+  height: 80%; /* Specified height */
+  background: #d3d3d3; /* Grey background */
+  outline: none; /* Remove outline */
+  opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+  -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+  transition: opacity .2s;
+}
+
+/* Mouse-over effects */
+.slider:hover {
+  opacity: 1; /* Fully shown on mouse-over */
+}
+
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */ 
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  width: 25px; /* Set a specific slider handle width */
+  height: 25px; /* Slider handle height */
+  background: #000; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+}
+
+.slider::-moz-range-thumb {
+  width: 25px; /* Set a specific slider handle width */
+  height: 25px; /* Slider handle height */
+  background: #4CAF50; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+}
+.botoes{
+  position: absolute;
+  left:62%;
+  bottom: 20%;
+  width:15%;
+  justify-content: space-between;
+  display: flex;
+}
+.button {
+  background-color: #000000; 
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+.button {
+  background-color: #000000; 
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+@media screen and (orientation:portrait) and (max-width: 600px){
+  #centralizar{
+    padding: 0px 0px;
+    flex-direction: column;
+  }
+  #fpv {  
+
+    width: 100%;
+    height: 200px;
+    padding: 0px 0;
+    border: 0px solid black;
+  }
+  #metade{
+   width: 50%
+  }
+
+  #msg_panel {
+    position: absolute;
+    top:100%;
+    margin:-25px 5px 0 0;
+  }
+
+  #state_panel {
+    position: absolute;
+    top:100%;
+    margin:-50px 5px 0 0;
+  }
+
+  #imgArrow {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin: -64px 0 0 -12px;
+    transform-origin: 50% 80%;
+    visibility: hidden;
+  }
+  .slidecontainer {
+    padding: 40 1;
+    height:  50%; /* Height of the outside container */
+    position: absolute;
+    right: 5%;
+    top:50%;
+  }
+
+  /* The slider itself */
+  .slider {  
+    appearance: none;
+    writing-mode: bt-lr; /* IE */
+   -webkit-appearance: slider-vertical; /* WebKit */
+    width: 20px; /* Full-width */
+    height: 80%; /* Specified height */
+    background: #d3d3d3; /* Grey background */
+    outline: none; /* Remove outline */
+    opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+    -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+    transition: opacity .2s;
+  }
+
+  /* Mouse-over effects */
+  .slider:hover {
+    opacity: 1; /* Fully shown on mouse-over */
+  }
+
+  /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */ 
+  .slider::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    width: 25px; /* Set a specific slider handle width */
+    height: 25px; /* Slider handle height */
+    background: #000; /* Green background */
+    cursor: pointer; /* Cursor on hover */
+  }
+
+  .slider::-moz-range-thumb {
+    width: 25px; /* Set a specific slider handle width */
+    height: 25px; /* Slider handle height */
+    background: #4CAF50; /* Green background */
+    cursor: pointer; /* Cursor on hover */
+  }
+  .botoes{
+    position: absolute;
+    left:32%;
+    bottom: 10%;
+    width:40%;
+    justify-content: space-between;
+    display: flex;
+  }
+  .button {
+    background-color: #000000; 
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+  }
+}
+</style>
+<script type="text/javascript">
+var touched = 0;
+var ws; // websocket
+var prev_th,prev_st,prev_f,prev_d,prev_e;
+var prev_s=20;
+var mode = 0; // 1: control mode, 0: view mode
+
+function init()
+{
+  document.body.addEventListener("touchstart", function(evt) {   
+    console.log(evt.target); 
+    if(evt.target.id=="fpv"|| evt.target.id=="img" || evt.target.id=='container' || evt.target.id=='centralizar' )
+      _down(evt.touches[0].pageX, evt.touches[0].pageY);
+  }, false);
+  document.body.addEventListener("touchend", _up, false);
+  document.body.addEventListener('touchmove', function(evt) {
+    evt.preventDefault();
+    if(evt.target.id=="fpv"|| evt.target.id=="img" || evt.target.id=='container' || evt.target.id=='centralizar' )
+      _move(evt.touches[0].pageX, evt.touches[0].pageY);
+  }, false);
+
+  document.body.addEventListener('mousedown', function(evt) {
+    console.log(evt.x);
+    if(evt.target.id=="fpv"|| evt.target.id=="img" || evt.target.id=='container' || evt.target.id=='centralizar' )
+      _down(evt.x, evt.y);
+  }, false);
+  document.body.addEventListener('mouseup', _up, false);
+  document.body.addEventListener('mousemove', function(evt) {
+    if(evt.target.id=="fpv"|| evt.target.id=="img" || evt.target.id=='container' || evt.target.id=='centralizar' )
+    _move(evt.x, evt.y);
+  }, false);
+
+  var slog = document.getElementById("state_panel");
+  if("WebSocket" in window)
+  {
+    ws = new WebSocket("ws://"+window.location.hostname+":8001");
+  // ws = new WebSocket("ws://192.168.0.110:8001");
+    slog.innerHTML = "Connecting...";
+    ws.onopen = function() {
+      slog.innerHTML = "Connected";
+    };
+    ws.onclose = function(evt) {
+      slog.innerHTML = "Disconnected:" + evt.data;
+    };
+    ws.onmessage = function(evt) {
+      slog.innerHTML = "Connected - " + evt.data;
+      if(evt.data == "control mode")
+        mode = 1;
+      _update();
+    }
+    ws.onerror = function(evt) {
+      slog.innerHTML = "Error:" + evt.data;
+    }
+  }
+  else
+  {
+    ws = null;
+    slog.innerHTML = "WebSocket is not supported!";
+  }
+
+  var i = document.createElement("img");
+  document.getElementById("fpv").appendChild(i);
+  var offsetHeight = document.getElementById('fpv').offsetHeight;
+  var offsetWidth = document.getElementById('fpv').offsetWidth;
+  i.draggable = false;
+  i.id='img'
+  i.style.width = offsetWidth+'px';
+  i.style.height = +'auto';
+  i.src = "http://"+window.location.hostname+":8080/?action=stream";
+ //i.src = "http://192.168.0.110:8080/?action=stream";
+
+}
+
+function _down(_x, _y) {
+  if(!mode)
+    return;
+
+  touched = 1;
+  x = _x;
+  y = _y;
+  console.log("X - "+x+"   Y -"+y);
+  var obj = document.getElementById("imgArrow");
+  obj.style.left = x+'px';
+  obj.style.top = y+'px';
+  obj.style.visibility = 'visible';
+
+}
+
+function _up(evt) {
+  touched = 0;
+  var obj = document.getElementById("imgArrow");
+  obj.style.visibility = 'hidden';
+  obj.style.transform = "rotateZ(0deg) scaleY(1.0)";
+  _update();
+}
+
+function _move(_x, _y) {
+  if(touched && mode) {
+    var deltaX = _x - x;
+    var deltaY = _y - y;
+    var deg = Math.round(Math.atan2(deltaX, -deltaY) * (180/Math.PI));
+    var len = Math.round(Math.sqrt(deltaX*deltaX + deltaY*deltaY));
+
+    document.getElementById('msg_panel').innerHTML = "move:" + Math.round(deg) + "deg," + Math.round(len) + "px";
+
+    document.getElementById("imgArrow").style.transform = "rotateZ("+deg+"deg) scaleY("+len/64+")";
+    var m1=0;
+    var m2=0;
+    var f=0;
+    if(deg <= 90 && deg >= -90)
+    { 
+      f=1;
+      if(len > 200) len = 200;
+      var percent=deg*100/90;
+      if(deg>0){//direita        
+        m2=Math.abs(Math.round(len/2)-Math.abs((Math.round((len/2)*(percent/100)))));
+        m1=Math.round(len/2);
+      }else if(deg<0){
+        m1=Math.abs(Math.round(len/2)-Math.abs((Math.round((len/2)*(percent/100)))));
+        m2=Math.round(len/2);
+      }
+      else{ //deg 0
+        m1=Math.round(len/2);
+        m2=Math.round(len/2);
+      }     
+      wssend(m1, m2,f);
+    }
+    else if(deg > 90 || deg < -90)
+    {
+      f=-1;
+      if(len > 200) len = 200;
+      var percent=deg*100/90;
+      if(deg==180){
+        m1=Math.round(len/2);
+        m2=Math.round(len/2);
+      }
+      else{
+         if(deg>0){//direita        
+            m2=Math.abs(Math.round(len/2)-Math.abs((Math.round((len/2)*(percent/100)))));
+            m1=Math.round(len/2);
+          }else if(deg<0){
+            m1=Math.abs(Math.round(len/2)-Math.abs((Math.round((len/2)*(percent/100)))));
+            m2=Math.round(len/2);
+          }         
+      }     
+      wssend(m1, m2,f);
+    }
+    else
+      wssend(m1, m2,f); 
+  }
+}
+
+function _update() {
+  if(!touched) {
+
+    if(mode) {
+      document.getElementById("msg_panel").innerHTML = "Touch screen to start";
+      prev_d=0;
+      prev_e=0;
+      //prev_s=20;
+      wssend(0,0,0);
+      
+    }
+    else
+    {
+      document.getElementById("msg_panel").innerHTML = ""; 
+    }
+  }
+}
+
+function wssend(st, th, f) {
+  if(prev_st != st || prev_th != th)
+  {
+    ws.send([st, th, f,prev_e,prev_d,prev_s]);
+    prev_st = st;
+    prev_th = th;
+    prev_f=f;
+  }
+}
+function Direita(arg){
+  ws.send([prev_st, prev_th, prev_f,prev_e,arg,prev_s]);
+  prev_d=arg;
+}
+function Esquerda(arg){
+  ws.send([prev_st, prev_th, prev_f, arg,prev_d,prev_s]);
+  prev_e=arg;
+
+}
+function ChangeValue(arg) {
+  //fazer valor do servo
+   ws.send([prev_st, prev_th, prev_f, prev_e,prev_d, arg]);
+   prev_s=arg;
+}
+
+</script>
+</head>
+<body onload="init()">
+
+      <div id="container">
+        <div id="centralizar">
+          <div id='fpv'>
+
+          </div>
+          <div id="metade">
+             <div class="slidecontainer">        
+                <input type="range" min="1" max="100" value="20" class="slider" id="myRange" onchange="ChangeValue(this.value)">
+              </div>
+
+              <div class="botoes">
+                <button class="button" ontouchstart="Esquerda(1)" onmousedown="Esquerda(1)" ontouchend="Esquerda(0)" onmouseup="Esquerda(0)"> < </button>
+                <button class="button" ontouchstart="Direita(1)" onmousedown="Direita(1)" ontouchend="Direita(0)" onmouseup="Direita(0)"> > </button>
+              </div>
+          </div>
+        </div>
+      </div>
+      <div id='msg_panel'>
+
+      </div>
+
+      <div id='state_panel'>
+
+      </div>
+  <img src="arrow.png" draggable="false" id="imgArrow">
+</body>
+</html>
