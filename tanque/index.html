@@ -261,27 +261,27 @@ function init()
   {
     ws = new WebSocket("ws://"+window.location.hostname+":8001");
   // ws = new WebSocket("ws://192.168.0.110:8001");
-    slog.innerHTML = "Connecting...";
+    slog.innerHTML = "Conectando...";
     ws.onopen = function() {
-      slog.innerHTML = "Connected";
+      slog.innerHTML = "Conectado";
     };
     ws.onclose = function(evt) {
       slog.innerHTML = "Disconnected:" + evt.data;
     };
     ws.onmessage = function(evt) {
-      slog.innerHTML = "Connected - " + evt.data;
+      slog.innerHTML = "Conectado - " + evt.data;
       if(evt.data == "control mode")
         mode = 1;
       _update();
     }
     ws.onerror = function(evt) {
-      slog.innerHTML = "Error:" + evt.data;
+      slog.innerHTML = "Erro:" + evt.data;
     }
   }
   else
   {
     ws = null;
-    slog.innerHTML = "WebSocket is not supported!";
+    slog.innerHTML = "WebSocket não é suportado!";
   }
 
   var i = document.createElement("img");
@@ -380,7 +380,7 @@ function _update() {
   if(!touched) {
 
     if(mode) {
-      document.getElementById("msg_panel").innerHTML = "Touch screen to start";
+      document.getElementById("msg_panel").innerHTML = "Toque na tela para comecar";
       prev_d=0;
       prev_e=0;
       //prev_s=20;
